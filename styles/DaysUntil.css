@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+.holiday-container{
+    color:white;
+    background-color: #104911;
+    text-align: center;
+    margin: auto;
+    width:static;
+    max-width:50%
+}
+
+.holiday-container h2{
+    color: white;
+    background-color: black;
+}

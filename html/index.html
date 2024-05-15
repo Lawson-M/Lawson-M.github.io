@@ -1,0 +1,71 @@
+<html>
+
+    <!-- Title and CSS imports -->
+    <head>
+        <title>Lawson's Portfolio</title>
+        <link rel="stylesheet" href="../styles/Global.css" />
+        <link rel="stylesheet" href="../styles/Index.css" />
+
+        <script defer src="../js/header.js"></script>
+        <script defer src="../js/index.js"></script>
+        <script defer src="../js/carousel.js"></script>
+
+    </head>
+
+    <!-- Main Body -->
+    <body>
+        <!-- Header for external links -->
+        <div id="header"></div>
+
+        <!-- Main Site Logo -->
+        <div>
+            <img src="../images/MainLogo.webp" class="logo"/>
+        </div>
+
+        <div class="banner">
+        <h1>
+            Featured
+        </h1>
+
+        <!--Flip through Carousel for Main Website pages-->
+        
+        <div class ="carousel">
+
+            <div class="slides fade">
+                <a href="Resume.html">
+                    <img src="../images/resume.webp" style="width:100%" alt="Resume">
+                </a>
+                <div class="img-text"> Resume </div>
+            </div>
+
+            <div class="slides fade">
+                <a href="DaysUntil.html">
+                    <img src="../images/daysUntil.webp" style="width:100%" alt="DaysUntil">
+                </a>
+            </div>
+
+            <div class="slides fade">
+                <a href="WebProjects.html">
+                    <img src="../images/web.webp" style="width:100%">
+                </a>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!--Dots that Show current place on carousel-->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        </div>
+        <!--Project Section Boxes-->
+        
+        <h1>
+            All Projects
+        </h1>
+        <div class = "project-section", id="all-projects"></div>
+    </body>
+</html>
