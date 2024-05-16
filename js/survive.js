@@ -1,17 +1,39 @@
+function enemyGeneration(bulls) {
+    const enemyContainer = document.getElementById('enemy'); // Ensure this element exists in your HTML
 
-function enemyGeneration(bulls){
-    const enemyContainer = document.getElementById('enemy');
-    ran = Math.floor(Math.random() * 500 + 1);
-    bulls.push({xpos: ran, ypos:490});
+    // Create and add a new enemy if needed
+    const ran = Math.floor(Math.random() * 500) + 1;
+    bulls.push({xpos: ran, ypos: 490});
+    const newEnemy = document.createElement('div');
 
-    enemy.innerHTML='';
+    newEnemy.className = 'enemy';
+    newEnemy.style.position = 'absolute';
+    newEnemy.style.left = `${ran}px`;
+    newEnemy.style.bottom = `490px`;
 
+    enemyContainer.appendChild(newEnemy);
+    // Update positions of all existing enemies
+    let index=0;
     for(let bull of bulls){
         bull.ypos-=10;
-        enemy.innerHTML+=`
-            <div  class="enemy" style="left: ${bull.xpos}px bottom: ${bull.ypos}px">
-            </div>
-        `;
+        if (bull.ypos<=0){
+            enemyContainer.removeChild(enemyContainer.children[index]);
+            bulls.splice(index,1);
+        }else{
+            enemyContainer.children[index].style.bottom=`${bull.ypos}px`
+        }
+        index++;
+    }
+}
+
+function checkCollision(){
+    const enemyContainer = document.getElementById('enemy');
+    const player = document.getElementById('character');
+
+    for(let en of enemyContainer.children){
+        if (parseInt(en.style.bottom)<20 && parseInt(en.style.left)>30){
+            console.log("hit!")
+        }
     }
 
 }
@@ -45,6 +67,11 @@ document.addEventListener('keydown', function(event) {
 });
 
 let bulls = [];
+
 setInterval(() => {
     enemyGeneration(bulls);
+}, 200);
+
+setInterval(() => {
+    checkCollision();
 }, 100);
