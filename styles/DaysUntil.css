@@ -6,12 +6,15 @@ h1 {
     color:white;
     background-color: #104911;
     text-align: center;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
     width:static;
     max-width:50%
 }
 
 .holiday-container h2{
+    text-align: left;
     color: white;
     background-color: black;
 }

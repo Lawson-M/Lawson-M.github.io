@@ -13,19 +13,34 @@ function updateCountdown(today, targetDate, daysTarget, secTarget){
 
 
     document.getElementById(daysTarget).innerText = `${dUntil} Days`;
-    document.getElementById(secTarget).innerText = `${sUntil} Seconds`;
+}
+
+async function updateSunset(today, targetID, latitude, longitude) {
+
+    const response = await fetch(`https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`);
+    const data = await response.json();
+    const targetDate = new Date(data.results.sunset);
+
+    let diff = targetDate-today;
+    let hUntil = Math.ceil(diff / (1000 * 60 * 60));
+
+
+    document.getElementById(targetID).innerText = `${hUntil} Hours`;
 }
 
 
 setInterval(() => {
+
     const today = new Date();
     const currentYear = today.getFullYear();
+
     const christmas = new Date(currentYear, 11, 25);
     const newYears = new Date(currentYear + 1, 0, 1);
-    const Thanksgiving = new Date(currentYear, 8, 28);
-    const Juneteenth = new Date(currentYear, 5, 19);
+
     updateCountdown(today, christmas, 'daysUntilChristmas', 'secondsUntilChristmas');
     updateCountdown(today, newYears, 'daysUntilNewYears', 'secondsUntilNewYears');
-    updateCountdown(today, Thanksgiving, 'daysUntilThanksgiving', 'secondsUntilThanksgiving');
-    updateCountdown(today, Juneteenth, 'daysUntilJuneteenth', 'secondsUntilJuneteenth');
+    updateSunset(today,'sunsetCST', 41.8781, -90);
 }, 1000);
+
+
+ 

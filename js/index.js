@@ -13,6 +13,11 @@ projects=[
         image: "./images/web.webp",
         alt:"About this website",
         caption:"About"
+    },
+    {   link: "Survive.html",
+        image: "./images/web.webp",
+        alt:"A little survival game",
+        caption:"Survive"
     }
 ]
 
