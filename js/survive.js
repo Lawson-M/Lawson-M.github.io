@@ -1,4 +1,5 @@
 function enemyGeneration(bulls) {
+    if (gameover==false){
     const enemyContainer = document.getElementById('enemy'); // Ensure this element exists in your HTML
 
     // Create and add a new enemy if needed
@@ -24,15 +25,21 @@ function enemyGeneration(bulls) {
         }
         index++;
     }
+    }
 }
 
 function checkCollision(){
     const enemyContainer = document.getElementById('enemy');
     const player = document.getElementById('character');
 
+
     for(let en of enemyContainer.children){
-        if (parseInt(en.style.bottom)<20 && parseInt(en.style.left)>30){
-            console.log("hit!")
+
+        let ePos = parseInt(en.style.left)
+        let pPos = parseInt(player.style.left)
+
+        if (parseInt(en.style.bottom)<20 && ePos>(pPos-10) && ePos<(pPos+10)){
+            gameover = true;
         }
     }
 
@@ -65,7 +72,7 @@ document.addEventListener('keydown', function(event) {
             break;
     }
 });
-
+let gameover = false;
 let bulls = [];
 
 setInterval(() => {
