@@ -1,30 +1,58 @@
+let gameInterval;
+
+function startGame() {
+    
+
+    gameInterval = setInterval(() => {
+        enemyGeneration(bulls);
+        checkCollision();
+    }, 100);
+}
+
 function enemyGeneration(bulls) {
     if (gameover==false){
-    const enemyContainer = document.getElementById('enemy'); // Ensure this element exists in your HTML
+        const enemyContainer = document.getElementById('enemy'); // Ensure this element exists in your HTML
+        const score = document.getElementById('score')
 
-    // Create and add a new enemy if needed
-    const ran = Math.floor(Math.random() * 500) + 1;
-    bulls.push({xpos: ran, ypos: 490});
-    const newEnemy = document.createElement('div');
+        // Create and add a new enemy if needed
+        const ran = Math.floor(Math.random() * 500) + 1;
+        bulls.push({xpos: ran, ypos: 490});
+        const newEnemy = document.createElement('div');
 
-    newEnemy.className = 'enemy';
-    newEnemy.style.position = 'absolute';
-    newEnemy.style.left = `${ran}px`;
-    newEnemy.style.bottom = `490px`;
+        newEnemy.className = 'enemy';
+        newEnemy.style.position = 'absolute';
+        newEnemy.style.left = `${ran}px`;
+        newEnemy.style.bottom = `490px`;
 
-    enemyContainer.appendChild(newEnemy);
-    // Update positions of all existing enemies
-    let index=0;
-    for(let bull of bulls){
-        bull.ypos-=10;
-        if (bull.ypos<=0){
-            enemyContainer.removeChild(enemyContainer.children[index]);
-            bulls.splice(index,1);
-        }else{
-            enemyContainer.children[index].style.bottom=`${bull.ypos}px`
+        enemyContainer.appendChild(newEnemy);
+        // Update positions of all existing enemies
+        let index=0;
+        for(let bull of bulls){
+            bull.ypos-=speed;
+            if (bull.ypos<=0){
+                enemyContainer.removeChild(enemyContainer.children[index]);
+                bulls.splice(index,1);
+                scoreCount++;
+                score.innerHTML=`SCORE: ${scoreCount}`
+            }else{
+                enemyContainer.children[index].style.bottom=`${bull.ypos}px`
+            }
+            index++;
         }
-        index++;
-    }
+    }else {
+        clearInterval(gameInterval);
+
+        const gameoverScreen = document.getElementById('gameoverScreen');
+        gameoverScreen.innerHTML = `
+            GAME OVER
+            <button id="reloadButton">Play Again</button>
+        `;
+
+        const reloadButton = document.getElementById('reloadButton');
+        reloadButton.addEventListener('click', () => {
+            window.location.reload();
+            console.log("reload button clicked")
+        });
     }
 }
 
@@ -48,13 +76,13 @@ function checkCollision(){
 document.addEventListener('keydown', function(event) {
     const player = document.getElementById('character');
     let pos = parseInt(player.style.left) || 250;
+    const step = 10;
+    
     if(pos>465){
         pos=460;
     }else if (pos<15){
         pos=20;
     }
-
-    const step = 10;
 
     switch(event.key){
         case"w":
@@ -72,13 +100,11 @@ document.addEventListener('keydown', function(event) {
             break;
     }
 });
+
 let gameover = false;
 let bulls = [];
+let scoreCount=0;
+let speed=5;
 
-setInterval(() => {
-    enemyGeneration(bulls);
-}, 200);
+startGame();
 
-setInterval(() => {
-    checkCollision();
-}, 100);
