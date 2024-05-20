@@ -15,7 +15,7 @@ projects=[
         caption:"About"
     },
     {   link: "Survive.html",
-        image: "./images/web.webp",
+        image: "./images/survive.png",
         alt:"A little survival game",
         caption:"Survive"
     }

@@ -1,8 +1,8 @@
 let gameInterval;
 
 function startGame() {
-    
-
+    const player = document.getElementById('character');
+    player.style.left = '250px'; // Set initial position for the player
     gameInterval = setInterval(() => {
         enemyGeneration(bulls);
         checkCollision();

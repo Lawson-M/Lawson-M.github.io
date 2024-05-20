@@ -1,5 +1,5 @@
 
-function updateCountdown(today, targetDate, daysTarget, secTarget){
+function updateCountdown(today, targetDate, daysTarget){
 
     const currentYear = today.getFullYear();
 
@@ -9,7 +9,6 @@ function updateCountdown(today, targetDate, daysTarget, secTarget){
 
     let diff = targetDate-today;
     let dUntil = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    let sUntil = Math.ceil(diff/1000)
 
 
     document.getElementById(daysTarget).innerText = `${dUntil} Days`;
@@ -28,19 +27,51 @@ async function updateSunset(today, targetID, latitude, longitude) {
     document.getElementById(targetID).innerText = `${hUntil} Hours`;
 }
 
+function Calculate(){
+    cDay = document.forms["custom-form"]["day"].value;
+    cMonth = document.forms["custom-form"]["month"].value;
+    cYear = document.forms["custom-form"]["year"].value;
+    const target = new Date(cYear, cMonth, cDay);
+
+    if(target!==NaN && cDay!=="" && cYear!=="" && cMonth!=="" ){
+        target.setMonth(target.getMonth()-1);
+        const today = new Date();
+        let diff = target-today;
+        let dUntil = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        console.log(dUntil);
+        document.getElementById("answer").innerText = `${dUntil} Days Away!`;
+    }else{
+        document.getElementById("answer").innerText = `There is an issue with your inputs`;
+    }
+    
+}
+
+const today = new Date();
+    const currentYear = today.getFullYear();
+
+    const halloween = new Date(currentYear, 9, 31);
+    const christmas = new Date(currentYear, 11, 25);
+    const newYears = new Date(currentYear + 1, 0, 1);
+
+    updateCountdown(today, halloween, 'daysUntilHalloween');
+    updateCountdown(today, christmas, 'daysUntilChristmas');
+    updateCountdown(today, newYears, 'daysUntilNewYears');
+    /*updateSunset(today,'sunsetCST', 41.8781, -90);*/
 
 setInterval(() => {
 
     const today = new Date();
     const currentYear = today.getFullYear();
 
+    const halloween = new Date(currentYear, 9, 31);
     const christmas = new Date(currentYear, 11, 25);
     const newYears = new Date(currentYear + 1, 0, 1);
 
-    updateCountdown(today, christmas, 'daysUntilChristmas', 'secondsUntilChristmas');
-    updateCountdown(today, newYears, 'daysUntilNewYears', 'secondsUntilNewYears');
-    updateSunset(today,'sunsetCST', 41.8781, -90);
-}, 1000);
+    updateCountdown(today, halloween, 'daysUntilHalloween');
+    updateCountdown(today, christmas, 'daysUntilChristmas');
+    updateCountdown(today, newYears, 'daysUntilNewYears');
+    /*updateSunset(today,'sunsetCST', 41.8781, -90);*/
+}, 10000);
 
 
- 
+document.getElementById("btn").addEventListener("click", Calculate)

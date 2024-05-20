@@ -17,6 +17,11 @@
         <h1>DAYS UNTIL</h1>
 
         <div class="holiday-container">
+            <h2>Days Until Halloween...</h2>
+            <div id="daysUntilHalloween"></div>
+        </div>
+
+        <div class="holiday-container">
             <h2>Days Until Christmas...</h2>
             <div id="daysUntilChristmas"></div>
         </div>
@@ -26,9 +31,30 @@
             <div id="daysUntilNewYears"></div>
         </div>
 
+        <!-- keeps timing out
         <div class="holiday-container">
-            <h2>Hours Until Sunset...</h2>
+            <h2>Hours Until Sunset(CST) ...</h2>
             <div id="sunsetCST"></div>
+        </div>
+        -->
+
+        <div class="holiday-container">
+            <h2>Custom Date</h2>
+            <h3>Pick your own date!</h3>
+            <form id="custom-form">
+                <label>Month(xx)</label><br>
+                <input type="text" name="month"><br>
+                
+                <label>Day(xx)</label><br>
+                <input type="text" name="day"><br>
+                
+                <label>Year(xxxx)</label><br>
+                <input type="text" name="year"><br>
+                
+                <input type="button" value="Calculate" id="btn">
+            </form>
+            <h3>Days Until Custom Date...</h3>
+            <div id="answer"></div>
         </div>
 
     </body>
