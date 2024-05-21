@@ -1,0 +1,12 @@
+img {
+    width: 250px;
+}
+
+.about-me {
+    text-align: center;
+    margin:auto;
+    max-width: 50%;
+}
+.text{
+    margin-bottom: 20px;
+}

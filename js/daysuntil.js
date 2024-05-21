@@ -39,7 +39,11 @@ function Calculate(){
         let diff = target-today;
         let dUntil = Math.ceil(diff / (1000 * 60 * 60 * 24));
         console.log(dUntil);
-        document.getElementById("answer").innerText = `${dUntil} Days Away!`;
+        if(dUntil>0){
+            document.getElementById("answer").innerText = `${dUntil} Days Away!`;
+        }else{
+            document.getElementById("answer").innerText = `${dUntil*-1} Days Ago!`;
+        }
     }else{
         document.getElementById("answer").innerText = `There is an issue with your inputs`;
     }

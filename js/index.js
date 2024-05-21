@@ -18,6 +18,11 @@ projects=[
         image: "./images/survive.webp",
         alt:"A little survival game",
         caption:""
+    },
+    {   link: "Blog.html",
+        image: "./images/blog.webp",
+        alt:"A little survival game",
+        caption:""
     }
 ]
 
