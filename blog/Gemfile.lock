@@ -300,11 +300,8 @@ DEPENDENCIES
   csv
   github-pages (~> 231)
   http_parser.rb (~> 0.6.0)
-  jekyll (= 3.9.5)
   jekyll-admin (~> 0.11)
   jekyll-feed (~> 0.12)
-  jekyll-sass-converter (= 1.5.2)
-  minima (~> 2.5)
   rack
   rackup
   tzinfo (>= 1, < 3)
