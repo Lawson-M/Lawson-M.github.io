@@ -1,0 +1,14 @@
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-admin
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "post"
+      title:  "Dev Update"
+      date:   "2024-05-23"
+      image: "/assets/images/blog.webp"

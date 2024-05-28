@@ -1,0 +1,22 @@
+body{
+    color: #011627;
+    margin: 0;
+    background: #EAF0CE;
+}
+
+.global-header {
+    background: #CBBAED;
+    top: 0; /* Set the header at the top of the viewport */
+    padding-bottom:10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
+    z-index: 1000; /* Keeps the header above other content */
+}
+
+.global-header-link{
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.tinylogo{
+    max-width: 20px;
+}

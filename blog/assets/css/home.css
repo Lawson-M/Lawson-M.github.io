@@ -1,0 +1,25 @@
+.title-header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.post-container{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    width:90%;
+}
+
+.featured-image {
+    max-width: 200px;
+    height:auto;
+}
+
+.post-excerpt {
+    padding-left:20px;
+}
+
+.post-title{
+    text-decoration: none;
+    font-size: 20px;
+}

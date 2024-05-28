@@ -1,0 +1,16 @@
+.title-header{
+    text-align: center;
+}
+
+.main-content{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.post-image {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
