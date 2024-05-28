@@ -1,4 +1,9 @@
 # Build settings
+
+url: "https://lawson-m.github.io"
+baseurl: "/blog"
+
+
 plugins:
   - jekyll-feed
   - jekyll-admin
