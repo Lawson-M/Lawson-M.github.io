@@ -19,7 +19,7 @@ projects=[
         alt:"A little survival game",
         caption:""
     },
-    {   link: "Blog.html",
+    {   link: "/blog/index.html",
         image: "./images/blog.webp",
         alt:"A little survival game",
         caption:""
