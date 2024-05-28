@@ -21,7 +21,7 @@ projects=[
     },
     {   link: "/blog/index.html",
         image: "./images/blog.webp",
-        alt:"A little survival game",
+        alt:"My development blog",
         caption:""
     }
 ]

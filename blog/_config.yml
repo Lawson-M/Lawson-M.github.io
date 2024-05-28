@@ -2,6 +2,7 @@
 
 url: "https://lawson-m.github.io"
 baseurl: "/blog"
+repository: "Lawson-M/Lawson-M.github.io"
 
 
 plugins:
