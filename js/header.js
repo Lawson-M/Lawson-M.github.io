@@ -5,6 +5,7 @@ header.innerHTML = `
                     <img src=./images/tinylogo.webp class="tinylogo"> </img>
                 </a>
                 <a class="global-header-link" href="About.html">About</a>
+                <a class="global-header-link" href="Resume.html">Resume</a>
                 <a class="global-header-link" href="index.html#all-projects">All Projects</a>
                 <a class="global-header-link" href="https://github.com/Lawson-M">Github</a>
             </div>

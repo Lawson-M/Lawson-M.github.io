@@ -1,18 +1,8 @@
 projects=[
-    {   link: "Resume.html",
-        image: "./images/resume.webp",
-        alt:"Resume link",
-        caption: "Resume"
-    },
     {   link: "DaysUntil.html",
         image: "./images/daysUntil.webp",
         alt:"'Days Until' Project",
         caption: ""
-    },
-    {   link: "About.html",
-        image: "./images/web.webp",
-        alt:"About this website",
-        caption:"About"
     },
     {   link: "Survive.html",
         image: "./images/survive.webp",
