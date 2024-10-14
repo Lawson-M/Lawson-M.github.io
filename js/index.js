@@ -9,10 +9,20 @@ projects=[
         alt:"A little survival game",
         caption:""
     },
-    {   link: "/blog/index.html",
-        image: "./images/blog.webp",
-        alt:"My development blog",
-        caption:""
+    {   link: "E2E.html",
+        image: "./images/Congestion.png",
+        alt:"End 2 End Calculator and Congestion Simulator",
+        caption:"Delay"
+    },
+    {   link: "BigDog.html",
+        image: "./images/BDACard.png",
+        alt:"Hardcoded Java RPG 'BDA'",
+        caption:"BDA"
+    },
+    {   link: "SDB.html",
+        image: "./images/SDBCard.png",
+        alt:"mySQL Database with Java UI",
+        caption:"Secret Database"
     }
 ]
 

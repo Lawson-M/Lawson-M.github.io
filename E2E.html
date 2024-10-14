@@ -1,0 +1,47 @@
+<html>
+
+    <!-- Title and CSS imports -->
+    <head>
+        <title>E2E Calc</title>
+        <link rel="stylesheet" href="./styles/Global.css" />
+        <link rel="stylesheet" href="./styles/Post.css" />
+
+        <script defer src="./js/header.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Header for external links -->
+        <div id="header"></div>
+
+        <div class = "top">
+            <h1>End-End Calculator and Congestion Simulator</h1>
+            <p> Last Modified: 10/13/2024</p>
+            <hr>
+        </div>
+
+        <div class="content">
+            
+            <div class="text"> 
+                This was a python project for my graduate networks class. It features an in-depth End-End calculator as well as a simulation
+                of TCP congestion all contained within a tkinter UI.
+            </div>
+
+            <img src="./images/E2E.png" alt="Picture of e2e Window"/>
+            <div class="text">
+                The End-End Delay calculator take the # of Links, Processing Delay, Transmission Delay, and Propogation Delay as inputs.
+                The Transmission and Propogation Delay inputs have optional subwindows. In the Transmission window you can alter the packet 
+                size and the tansmission rate of each link. In the Propogation window, you can set the length and propogation rate of each link.
+            </div>
+
+            <div>
+                <img src="./images/CongestionValues.png" alt="Picture of Congestion Input and return"/>
+                <img src="./images/Congestion.png" alt="Picture of Congestion Window"/>
+            </div>
+            <div class="text">
+                In addition to the End-End delay calculator I developed a TCP congestion window simulator. This simulation takes bytes as in input, 
+                and returns throughput, packets dropped, time elapsed, as well as a visual representation of the congestion window.
+            </div>
+        
+    </div>
+    </body>

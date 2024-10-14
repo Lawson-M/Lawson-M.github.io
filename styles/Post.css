@@ -1,0 +1,30 @@
+.top {
+    text-align: Left;
+    margin:auto;
+    max-width: 50%;
+}
+
+.top hr {
+    border-color: black;
+    height: 0px;
+    border-width: 1px;
+    
+}
+
+.content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.content {
+    text-align: Left;
+    margin:auto;
+    max-width: 50%;
+}
+
+.text{
+    margin-bottom: 20px;
+}
