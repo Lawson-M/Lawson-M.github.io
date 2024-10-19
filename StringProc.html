@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- Title and CSS imports -->
+    <head>
+        <title>String Proc</title>
+        <link rel="stylesheet" href="./styles/Global.css" />
+        <link rel="stylesheet" href="./styles/StringProc.css" />
+        <script defer src="./js/header.js"></script>
+        <script defer src="./js/stringproc.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Header for external links -->
+        <div id="header"></div>
+
+        <div class="main-container">
+
+            <h1>String Processing</h1>
+
+            <form id="strform">
+                <label for="str">Enter String:</label><br>
+                <input type="text" name="str" id="str"/><br>
+                <label for="str">Select Process:</label><br>
+                <select name="choice" id="choice">
+                    <option value="z">Z Algorithm</option>
+                    <option value="badchar">Bad Character Pre-Processing</option>
+                </select><br>
+                <input type="button" id = "btn" value="Process"></button>
+            </form>
+            <div id="result" class="main-container"></div>
+        </div>
+
+    </body>
+</html>

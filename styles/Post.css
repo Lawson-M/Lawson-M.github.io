@@ -1,4 +1,5 @@
 .top {
+    background-color: #c2c7ac;
     text-align: Left;
     margin:auto;
     max-width: 50%;
@@ -20,6 +21,7 @@
 }
 
 .content {
+    background-color: #d6dbbe;
     text-align: Left;
     margin:auto;
     max-width: 50%;

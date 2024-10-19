@@ -23,6 +23,11 @@ projects=[
         image: "./images/SDBCard.png",
         alt:"mySQL Database with Java UI",
         caption:"Secret Database"
+    },
+    {   link: "StringProc.html",
+        image: "./images/web.webp",
+        alt:"A few string processing algorithms",
+        caption:"String Processing"
     }
 ]
 
