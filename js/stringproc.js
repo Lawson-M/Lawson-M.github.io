@@ -4,6 +4,8 @@ function Choose(){
         Z();
     }else if(choice == "badchar"){
         PreBad();
+    }else if(choice == "goodsuf"){
+        PreGood();
     }
 }
 
@@ -127,7 +129,8 @@ function PreBad(){
 
             }else{
                 tab = tab + "<td>" + result[w] + "</td>";
-            }        }
+            }        
+        }
         tab = tab + "</tr>";
 
     }
@@ -136,6 +139,105 @@ function PreBad(){
 
 
     
+    document.getElementById("result").innerHTML = tab;
+}
+
+function runZ(str){
+    var strlen = str.length;
+    var l =0;
+    var r=0;
+    var z=[];
+
+    for(var i = 0; i<strlen; i++){
+        z[i]=0;
+    }
+
+    for(var k=1; k<strlen; k++){
+        if(k>r){
+            l=k;
+            r=k;
+            while(r<strlen && str.charAt(r)==str.charAt(r-l)){
+                z[k]+=1;
+                r+=1;
+            }
+            if(z[k]>0){
+                r=(k+z[k]-1);
+                //l=k;
+            }
+            console.log(z[k]);
+        }
+        else{
+            if(z[k-l]<r-k){
+                z[k]=z[k-l];
+            }else{
+                l=k;
+                r=k;
+                while(r<strlen && str.charAt(r)==str.charAt(r-l)){
+                    z[k]+=1;
+                    r+=1;
+                }
+            }
+        }
+    }
+
+    return z;
+    
+    
+}
+
+function PreGood(){
+    var str = document.forms["strform"]["str"].value;
+    var strlen = str.length;
+	var result = [];
+	
+    var tab = "<table> <tr>";
+
+    for(var i = 0; i<strlen; i++){
+        tab = tab + "<td>" + str.charAt(i) + "</td>";
+    }
+    tab = tab + "</tr>";
+
+	strrev = "";
+  
+	//Reverse String and Calculate Z values
+    tab = tab + "<tr>";
+	for(i = 0; i<strlen; i++) {
+	    result[i] = strlen-1;//initialize result with n
+		strrev = strrev + str.charAt(strlen-(i+1));  
+        tab = tab + "<td>" + strlen + "</td>";
+	}	  
+    tab = tab + "</tr>";
+
+	var z = runZ(strrev); //Find Z of the reverse string
+	var N = []; //Initialize N array
+	 
+	//Populate N with Z values
+	for(i = 0; i<strlen; i++ ) {
+		N[i] = z[(strlen-1)-i];
+	}
+
+    result[strlen-1]=1;//If first value wrong just shift 1
+
+	 
+	//Populate result array with appropriate shift
+	var index = 0;
+	for(i = 0; i<strlen; i++ ) {
+        if(N[i]!=0){
+            index = (strlen-1)-N[i];
+            result[index] = ((strlen-1)-i);
+        }
+        
+
+        tab = tab + "<tr>";
+        for(var w = 0; w<strlen; w++){
+                tab = tab + "<td>" + result[w] + "</td>";
+        }
+        tab = tab + "</tr>";        
+    }
+	 
+    tab = tab+"</table>";
+
+	  
     document.getElementById("result").innerHTML = tab;
 }
 
