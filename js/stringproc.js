@@ -202,9 +202,9 @@ function PreGood(){
 	//Reverse String and Calculate Z values
     tab = tab + "<tr>";
 	for(i = 0; i<strlen; i++) {
-	    result[i] = strlen-1;//initialize result with n
+	    result[i] = 0;//initialize result with n
 		strrev = strrev + str.charAt(strlen-(i+1));  
-        tab = tab + "<td>" + strlen + "</td>";
+        tab = tab + "<td>" + "0" + "</td>";
 	}	  
     tab = tab + "</tr>";
 
