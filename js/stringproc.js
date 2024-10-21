@@ -221,16 +221,27 @@ function PreGood(){
 	 
 	//Populate result array with appropriate shift
 	var index = 0;
+    var found;
 	for(i = 0; i<strlen; i++ ) {
+        found=false;
         if(N[i]!=0){
             index = (strlen-1)-N[i];
             result[index] = ((strlen-1)-i);
+            found=true;
         }
         
 
         tab = tab + "<tr>";
         for(var w = 0; w<strlen; w++){
+            if(found==true && w==index){
+                tab = tab + "<td style='background-color:red'>" + result[w] + "</td>";
+            }else if(found==true && w>index){
+                tab = tab + "<td style='background-color:green'>" + result[w] + "</td>";
+            }else if(found==true && w<(strlen-result[index]) && w>(strlen-result[index] - N[i]-1)){
+                tab = tab + "<td style='background-color:yellow'>" + result[w] + "</td>";
+            }else{
                 tab = tab + "<td>" + result[w] + "</td>";
+            }
         }
         tab = tab + "</tr>";        
     }
